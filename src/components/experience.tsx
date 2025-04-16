@@ -2,10 +2,50 @@
 
 import { motion } from "framer-motion"
 import { profileData } from "@/lib/data"
-import { useState } from "react"
+import { useState, useMemo } from "react"
+
+type CompanyIndices = {
+  company: string;
+  indices: number[];
+};
 
 export default function Experience() {
   const [activeExperience, setActiveExperience] = useState(0);
+
+  // Agrupa as experiências por empresa
+  const companiesWithIndices = useMemo<CompanyIndices[]>(() => {
+    const companies: CompanyIndices[] = [];
+    const added = new Set<string>();
+    
+    profileData.experience.forEach((exp, index) => {
+      if (!added.has(exp.company)) {
+        companies.push({
+          company: exp.company,
+          indices: profileData.experience
+            .map((e, i) => e.company === exp.company ? i : -1)
+            .filter(i => i !== -1)
+        });
+        added.add(exp.company);
+      }
+    });
+    
+    return companies;
+  }, []);
+
+  // Encontre a empresa atual
+  const currentCompanyData = companiesWithIndices.find(c => 
+    c.indices.includes(activeExperience)
+  );
+
+  // Determine se estamos visualizando a Conexos
+  const isConexos = profileData.experience[activeExperience].company === "Conexos";
+  
+  // Encontre os índices das experiências da Conexos
+  const conexosIndices = useMemo(() => {
+    return profileData.experience
+      .map((exp, index) => exp.company === "Conexos" ? index : -1)
+      .filter(index => index !== -1);
+  }, []);
 
   return (
     <section className="py-20 bg-slate-50" id="experience">
@@ -28,17 +68,17 @@ export default function Experience() {
             {/* Sidebar with Company Buttons */}
             <div className="md:w-1/4">
               <div className="space-y-1">
-                {profileData.experience.map((exp, index) => (
+                {companiesWithIndices.map((companyData, index) => (
                   <button
                     key={`nav-${index}`}
-                    onClick={() => setActiveExperience(index)}
+                    onClick={() => setActiveExperience(companyData.indices[0])}
                     className={`w-full text-left p-4 rounded transition-all flex items-center
-                      ${activeExperience === index 
+                      ${companyData.indices.includes(activeExperience)
                         ? 'bg-blue-50 border-l-4 border-cyan-500 text-slate-600' 
                         : 'hover:bg-gray-50 text-slate-600'
                       }`}
                   >
-                    <span className="font-medium">{exp.company}</span>
+                    <span className="font-medium">{companyData.company}</span>
                   </button>
                 ))}
               </div>
@@ -46,78 +86,85 @@ export default function Experience() {
 
             {/* Active Experience Content */}
             <div className="md:w-3/4">
-              <motion.div
-                key={`experience-${activeExperience}`}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="mb-4">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-2">{profileData.experience[activeExperience].position}</h3>
-                  <div className="flex items-center">
-                    <span className="text-lg font-medium text-cyan-500">{profileData.experience[activeExperience].company}</span>
-                    {profileData.experience[activeExperience].location && (
-                      <span className="text-slate-600 text-sm ml-2">
-                        ({profileData.experience[activeExperience].location})
-                      </span>
-                    )}
-                  </div>
-                  <div className="text-right text-cyan-500 font-medium">
-                    {profileData.experience[activeExperience].period}
-                  </div>
-                </div>
+              {isConexos ? (
+                // Layout especial para Conexos mostrando ambas as posições
+                <div>
+                  {conexosIndices.map((expIndex) => {
+                    const exp = profileData.experience[expIndex];
+                    return (
+                      <motion.div
+                        key={`conexos-${expIndex}`}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: expIndex === conexosIndices[0] ? 0 : 0.2 }}
+                        className={`${expIndex !== conexosIndices[0] ? 'mt-12' : ''}`}
+                      >
+                        <div className="mb-4">
+                          <h3 className="text-2xl font-bold text-slate-900 mb-2">{exp.position}</h3>
+                          <div className="flex items-center">
+                            <span className="text-lg font-medium text-cyan-500">{exp.company}</span>
+                            {exp.location && (
+                              <span className="text-slate-600 text-sm ml-2">
+                                ({exp.location})
+                              </span>
+                            )}
+                          </div>
+                          <div className="text-right text-cyan-500 font-medium">
+                            {exp.period}
+                          </div>
+                        </div>
 
-                <div className="text-slate-700 mb-6 leading-relaxed">
-                  {profileData.experience[activeExperience].description}
-                </div>
+                        <div className="text-slate-700 mb-6 leading-relaxed">
+                          {exp.description}
+                        </div>
 
-                <ul className="list-disc pl-5 space-y-2">
-                  {profileData.experience[activeExperience].responsibilities && 
-                    profileData.experience[activeExperience].responsibilities.map((item, idx) => (
-                      <li key={idx} className="text-slate-700">{item}</li>
-                    ))}
-                </ul>
-              </motion.div>
+                        <ul className="list-disc pl-5 space-y-2">
+                          {exp.responsibilities && 
+                            exp.responsibilities.map((item, idx) => (
+                              <li key={idx} className="text-slate-700">{item}</li>
+                            ))}
+                        </ul>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              ) : (
+                // Layout padrão para outras empresas
+                <motion.div
+                  key={`experience-${activeExperience}`}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="mb-4">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">{profileData.experience[activeExperience].position}</h3>
+                    <div className="flex items-center">
+                      <span className="text-lg font-medium text-cyan-500">{profileData.experience[activeExperience].company}</span>
+                      {profileData.experience[activeExperience].location && (
+                        <span className="text-slate-600 text-sm ml-2">
+                          ({profileData.experience[activeExperience].location})
+                        </span>
+                      )}
+                    </div>
+                    <div className="text-right text-cyan-500 font-medium">
+                      {profileData.experience[activeExperience].period}
+                    </div>
+                  </div>
+
+                  <div className="text-slate-700 mb-6 leading-relaxed">
+                    {profileData.experience[activeExperience].description}
+                  </div>
+
+                  <ul className="list-disc pl-5 space-y-2">
+                    {profileData.experience[activeExperience].responsibilities && 
+                      profileData.experience[activeExperience].responsibilities.map((item, idx) => (
+                        <li key={idx} className="text-slate-700">{item}</li>
+                      ))}
+                  </ul>
+                </motion.div>
+              )}
             </div>
-          </div>
-        </div>
-
-        <div className="mt-16 max-w-3xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">Minhas Habilidades</h3>
-            <p className="text-slate-700 mb-8">
-              Tecnologias e metodologias com as quais trabalho para entregar qualidade.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
-            {profileData.skills.map((skill, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-lg p-4 shadow-sm border border-slate-100"
-              >
-                <div className="flex justify-between items-center mb-2">
-                  <span className="font-medium text-slate-900">{skill.name}</span>
-                  <span className="text-xs font-medium text-cyan-500">{skill.level}%</span>
-                </div>
-                <div className="w-full bg-slate-200 rounded-full h-2">
-                  <div
-                    className="bg-cyan-500 h-2 rounded-full"
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </div>

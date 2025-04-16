@@ -104,9 +104,24 @@ export const profileData = {
     },
     {
       company: "Conexos",
-      position: "Estagiário de QA",
-      period: "2018 - 2019",
-      location: "Presencial - Vitória",
+      position: "Analista de Qualidade",
+      period: "Setembro 2022 - Fevereiro 2024",
+      location: "Híbrido - Vitória/ES",
+      description: "Obtive conhecimento em teste de software e operações de negócios em uma empresa de tecnologia. Como Analista de Qualidade (QA), as responsabilidades incluíam o planejamento e desenvolvimento de casos de teste, criação de cenários de teste, documentação de testes e da plataforma, execução de testes funcionais e não funcionais, análise de requisitos, redação de relatórios de bugs e automação de casos de teste usando a ferramenta Ghost Inspector.",
+      technologies: ["Ghost Inspector", "Selenium", "Testes Manuais", "Jira"],
+      responsibilities: [
+        "Planejamento e execução das atividades diárias de acordo com os prazos definidos pela equipe, colaborando com o bom andamento das operações e a qualidade dos resultados",
+        "Planejamento de Testes, Cenários de Testes, Casos de testes",
+        "Documentação de rotinas e bugs de sistema",
+        "Testes caixa preta",
+        "Automação de testes da Web com Ghost Inspector e Selenium"
+      ]
+    },
+    {
+      company: "Conexos",
+      position: "Estagiário de Analista de Qualidade",
+      period: "Julho 2021 - Setembro 2022",
+      location: "Híbrido - Vitória/ES",
       description: "Suporte ao time de QA em testes manuais e documentação.",
       technologies: ["Testes Manuais", "Documentação", "Jira"],
       responsibilities: [
