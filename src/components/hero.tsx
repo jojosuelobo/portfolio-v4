@@ -37,7 +37,7 @@ export default function Hero() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white"
+                className="border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white bg-white"
               >
                 <Link href="/contact">Entrar em Contato</Link>
               </Button>
