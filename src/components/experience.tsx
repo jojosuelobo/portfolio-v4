@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion"
 import { profileData } from "@/lib/data"
+import { useState } from "react"
 
 export default function Experience() {
+  const [activeExperience, setActiveExperience] = useState(0);
+
   return (
     <section className="py-20 bg-slate-50" id="experience">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,48 +17,69 @@ export default function Experience() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Experiência Profissional</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Experiências</h2>
             <div className="w-20 h-1.5 bg-cyan-500 mx-auto mb-6"></div>
-            <p className="text-lg text-slate-700">
-              Minha jornada profissional na área de Qualidade de Software e Automação de Testes.
-            </p>
           </motion.div>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="relative border-l-2 border-slate-300 pl-8 ml-4 space-y-12">
-            {profileData.experience.map((exp, index) => (
+        {/* Experience Layout with Sidebar */}
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-8">
+            {/* Sidebar with Company Buttons */}
+            <div className="md:w-1/4">
+              <div className="space-y-1">
+                {profileData.experience.map((exp, index) => (
+                  <button
+                    key={`nav-${index}`}
+                    onClick={() => setActiveExperience(index)}
+                    className={`w-full text-left p-4 rounded transition-all flex items-center
+                      ${activeExperience === index 
+                        ? 'bg-blue-50 border-l-4 border-cyan-500 text-slate-600' 
+                        : 'hover:bg-gray-50 text-slate-600'
+                      }`}
+                  >
+                    <span className="font-medium">{exp.company}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Active Experience Content */}
+            <div className="md:w-3/4">
               <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="relative"
+                key={`experience-${activeExperience}`}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.3 }}
               >
-                <div className="absolute -left-12 top-0 w-6 h-6 bg-white rounded-full border-2 border-cyan-500 z-10" />
-                <div className="absolute -left-[2.75rem] top-0 font-medium text-xs text-slate-500 bg-white px-2 py-1 rounded">
-                  {exp.period}
-                </div>
-                <div className="bg-white rounded-lg p-6 shadow-sm border border-slate-100">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-3">
-                    <h3 className="text-xl font-bold text-slate-900">{exp.position}</h3>
-                    <span className="text-cyan-500 font-semibold">{exp.company}</span>
-                  </div>
-                  <p className="text-slate-700 mb-4">{exp.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {exp.technologies.map((tech, idx) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1 bg-slate-100 text-slate-800 text-xs font-medium rounded-full"
-                      >
-                        {tech}
+                <div className="mb-4">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">{profileData.experience[activeExperience].position}</h3>
+                  <div className="flex items-center">
+                    <span className="text-lg font-medium text-cyan-500">{profileData.experience[activeExperience].company}</span>
+                    {profileData.experience[activeExperience].location && (
+                      <span className="text-slate-600 text-sm ml-2">
+                        ({profileData.experience[activeExperience].location})
                       </span>
-                    ))}
+                    )}
+                  </div>
+                  <div className="text-right text-cyan-500 font-medium">
+                    {profileData.experience[activeExperience].period}
                   </div>
                 </div>
+
+                <div className="text-slate-700 mb-6 leading-relaxed">
+                  {profileData.experience[activeExperience].description}
+                </div>
+
+                <ul className="list-disc pl-5 space-y-2">
+                  {profileData.experience[activeExperience].responsibilities && 
+                    profileData.experience[activeExperience].responsibilities.map((item, idx) => (
+                      <li key={idx} className="text-slate-700">{item}</li>
+                    ))}
+                </ul>
               </motion.div>
-            ))}
+            </div>
           </div>
         </div>
 
