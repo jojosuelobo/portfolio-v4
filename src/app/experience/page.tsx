@@ -1,5 +1,6 @@
 import Experience from "@/components/experience"
 import Technologies from "@/components/technologies"
+import Projects from "@/components/projects"
 import Footer from "@/components/footer"
 
 export default function ExperiencePage() {
@@ -8,6 +9,7 @@ export default function ExperiencePage() {
       <div className="pt-16 lg:pt-20">
         <Experience />
         <Technologies />
+        <Projects />
       </div>
       <Footer />
     </main>
