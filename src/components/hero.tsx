@@ -127,7 +127,7 @@ export default function Hero() {
               className="flex flex-col items-center text-slate-500 hover:text-cyan-500 transition-colors"
               onClick={(e) => handleScrollToSection(e, 'about')}
             >
-              <span className="text-sm mb-2">Rolar para baixo</span>
+              <span className="text-sm mb-2">Mais Informações</span>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M12 5V19M12 19L19 12M12 19L5 12"
