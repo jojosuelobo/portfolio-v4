@@ -108,14 +108,14 @@ export default function Header() {
                   {item.name}
                 </a>
               ))}
-              <Button asChild className="ml-4 bg-cyan-500 hover:bg-cyan-600 text-white">
+              {/* <Button asChild className="ml-4 bg-cyan-500 hover:bg-cyan-600 text-white">
                 <a 
                   href="#contact" 
                   onClick={(e) => handleNavClick(e, "#contact")}
                 >
                   Entrar em Contato
                 </a>
-              </Button>
+              </Button> */}
             </nav>
           )}
         </div>
