@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import Image from "next/image"
 import { profileData } from "@/lib/data"
 
 export default function About() {
@@ -17,7 +17,7 @@ export default function About() {
   return (
     <section className="py-20 bg-white" id="about">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -26,50 +26,37 @@ export default function About() {
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Sobre Mim</h2>
             <div className="w-20 h-1.5 bg-cyan-500 mx-auto mb-6"></div>
-            <p className="text-lg text-slate-700 mb-8">
-              {profileData.bio}
-            </p>
+            {/* <p className="text-lg text-slate-700 mb-4">
+              Conheça um pouco mais sobre minha trajetória, formação e o que me motiva como profissional de QA.
+            </p> */}
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="lg:col-span-5 flex items-center justify-center"
           >
-            <div className="bg-slate-50 p-6 rounded-lg border border-slate-100">
-              <h3 className="text-xl font-bold text-slate-900 mb-4">Educação</h3>
-              <div className="space-y-4">
-                {profileData.education.map((edu, index) => (
-                  <div key={index} className="border-l-2 border-cyan-500 pl-4">
-                    <h4 className="font-semibold text-slate-900">{edu.degree}</h4>
-                    <p className="text-sm text-slate-600">{edu.institution}</p>
-                    <p className="text-xs text-slate-500">{edu.period}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-slate-50 p-6 rounded-lg border border-slate-100">
-              <h3 className="text-xl font-bold text-slate-900 mb-4">Habilidades</h3>
-              <div className="grid grid-cols-2 gap-4">
-                {profileData.skills.slice(0, 8).map((skill, index) => (
-                  <div key={index} className="flex flex-col">
-                    <div className="flex justify-between mb-1">
-                      <span className="text-sm font-medium text-slate-700">{skill.name}</span>
-                      <span className="text-xs font-medium text-slate-500">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-slate-200 rounded-full h-2">
-                      <div
-                        className="bg-cyan-500 h-2 rounded-full"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
+            <div className="relative w-full max-w-md">
+              <div className="bg-slate-100 rounded-lg p-4 h-full">
+                <Image
+                  src="/images/profile.svg"
+                  alt={profileData.name}
+                  width={500}
+                  height={500}
+                  className="w-full h-auto rounded-lg"
+                />
+                {/* <div className="mt-8 p-8 bg-white rounded-lg shadow-sm border border-slate-100">
+                  <blockquote className="italic text-slate-700 text-lg relative">
+                    <span className="absolute top-0 left-0 text-4xl text-slate-200">"</span>
+                    <p className="ml-6 mt-2">
+                      Acredito que a qualidade de software não é apenas sobre encontrar bugs, mas sobre garantir experiências excepcionais para os usuários.
+                    </p>
+                  </blockquote>
+                </div> */}
               </div>
             </div>
           </motion.div>
@@ -79,83 +66,119 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="lg:col-span-7 space-y-8"
           >
-            <div className="bg-slate-900 text-white p-8 rounded-lg">
-              <h3 className="text-xl font-bold mb-4">Informação Pessoal</h3>
-              <ul className="space-y-3">
-                <li className="flex">
-                  <span className="font-semibold w-24">Nome:</span>
-                  <span>{profileData.name}</span>
-                </li>
-                <li className="flex">
-                  <span className="font-semibold w-24">Email:</span>
-                  <span>{profileData.contact.email}</span>
-                </li>
-                <li className="flex">
-                  <span className="font-semibold w-24">Telefone:</span>
-                  <span>{profileData.contact.phone}</span>
-                </li>
-                <li className="flex">
-                  <span className="font-semibold w-24">GitHub:</span>
-                  <a href={`https://${profileData.contact.github}`} target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:underline">
-                    {profileData.contact.github}
-                  </a>
-                </li>
-                <li className="flex">
-                  <span className="font-semibold w-24">LinkedIn:</span>
-                  <a href={`https://${profileData.contact.linkedin}`} target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:underline">
-                    {profileData.contact.linkedin}
-                  </a>
-                </li>
-                <li className="flex">
-                  <span className="font-semibold w-24">Experiência:</span>
-                  <span>{profileData.yearsOfExperience} anos</span>
-                </li>
-              </ul>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Quem sou eu</h3>
+              <p className="text-slate-700 mb-4">
+                Sou um Analista de QA apaixonado por garantir a qualidade de software através de processos eficientes e automação. Com formação em Ciência da Computação e experiência em diversas empresas de tecnologia, desenvolvi habilidades sólidas em ferramentas de automação como Cypress, Selenium, Playwright e Jest.
+              </p>
+              <p className="text-slate-700 mb-6">
+                Minha abordagem combina testes manuais meticulosos com estratégias de automação eficientes, sempre buscando o equilíbrio perfeito entre velocidade e qualidade. Acredito na melhoria contínua e na importância de estar sempre atualizado com as últimas tendências e ferramentas do mercado.
+              </p>
             </div>
 
-            <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-8 rounded-lg text-white">
-              <h3 className="text-xl font-bold mb-4">O Que Eu Faço</h3>
-              <ul className="space-y-4">
-                <li className="flex gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <motion.div 
+                className="bg-white shadow-sm rounded-lg p-6 border border-slate-100 text-center"
+                whileHover={{ y: -10, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              >
+                <div className="flex justify-center mb-4 text-cyan-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
                   </svg>
-                  <span>Automação de Testes End-to-End</span>
-                </li>
-                <li className="flex gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </div>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">Formação</h4>
+                <p className="text-sm text-slate-600">
+                  Ciência da Computação - UVV
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="bg-white shadow-sm rounded-lg p-6 border border-slate-100 text-center"
+                whileHover={{ y: -10, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              >
+                <div className="flex justify-center mb-4 text-cyan-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
-                  <span>Testes de API e Performance</span>
-                </li>
-                <li className="flex gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </div>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">Certificações</h4>
+                <p className="text-sm text-slate-600">
+                  CTFL, CCNA
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="bg-white shadow-sm rounded-lg p-6 border border-slate-100 text-center"
+                whileHover={{ y: -10, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              >
+                <div className="flex justify-center mb-4 text-cyan-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <span>Desenvolvimento de Frameworks de Teste</span>
-                </li>
-                <li className="flex gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Integração Contínua e DevOps</span>
-                </li>
-              </ul>
+                </div>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">Experiência</h4>
+                <p className="text-sm text-slate-600">
+                +{profileData.yearsOfExperience} anos na área de TI
+                </p>
+              </motion.div>
+            </div>
+
+            {/* <div className="bg-slate-50 rounded-lg p-6 border border-slate-100">
+              <h3 className="text-xl font-bold text-slate-900 mb-4">O Que Eu Faço</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 bg-cyan-100 rounded-full flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <span className="text-slate-700">Automação de Testes End-to-End</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 bg-cyan-100 rounded-full flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <span className="text-slate-700">Testes de API e Performance</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 bg-cyan-100 rounded-full flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <span className="text-slate-700">Desenvolvimento de Frameworks de Teste</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 bg-cyan-100 rounded-full flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <span className="text-slate-700">Integração Contínua e DevOps</span>
+                </div>
+              </div>
+            </div> */}
+
+            <div className="mt-8 flex justify-center lg:justify-start">
+              {/* <Button asChild size="lg" className="bg-slate-900 hover:bg-slate-800 text-white">
+                <a 
+                  href="#experience" 
+                  onClick={(e) => handleScrollToSection(e, 'experience')}
+                >
+                  Ver Experiência
+                </a>
+              </Button> */}
             </div>
           </motion.div>
-        </div>
-
-        <div className="mt-16 text-center">
-          <Button asChild size="lg" className="bg-slate-900 hover:bg-slate-800 text-white">
-            <a 
-              href="#experience" 
-              onClick={(e) => handleScrollToSection(e, 'experience')}
-            >
-              Ver Experiência
-            </a>
-          </Button>
         </div>
       </div>
     </section>
