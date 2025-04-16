@@ -2,7 +2,7 @@ export const profileData = {
   name: "Josué Lobo",
   title: "QA Automation Engineer",
   bio: "QA Automation Engineer com experiência em testes funcionais e automatizados. Especializado em garantir a qualidade de software através de testes eficientes e processos ágeis.",
-  yearsOfExperience: 5,
+  yearsOfExperience: 4,
   contact: {
     email: "josue.lobo@email.com",
     phone: "+55 (99) 99999-9999",
