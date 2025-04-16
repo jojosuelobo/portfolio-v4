@@ -72,7 +72,7 @@ export default function Experience() {
                   <button
                     key={`nav-${index}`}
                     onClick={() => setActiveExperience(companyData.indices[0])}
-                    className={`w-full text-left p-4 rounded transition-all flex items-center
+                    className={`w-full text-left p-4 rounded transition-all flex items-center cursor-pointer
                       ${companyData.indices.includes(activeExperience)
                         ? 'bg-blue-50 border-l-4 border-cyan-500 text-slate-600' 
                         : 'hover:bg-gray-50 text-slate-600'
