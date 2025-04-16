@@ -7,8 +7,17 @@ import { motion } from "framer-motion"
 import { profileData } from "@/lib/data"
 
 export default function Hero() {
+  const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section
+      id="hero"
       className="relative min-h-screen flex items-center pt-16 bg-gradient-to-b from-slate-50 to-slate-100"
     >
       <div className="absolute inset-0 overflow-hidden">
@@ -31,7 +40,12 @@ export default function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button asChild size="lg" className="bg-slate-900 hover:bg-slate-800 text-white">
-                <Link href="/projects">Ver Portfólio</Link>
+                <a 
+                  href="#projects" 
+                  onClick={(e) => handleScrollToSection(e, 'projects')}
+                >
+                  Ver Portfólio
+                </a>
               </Button>
               <Button
                 asChild
@@ -39,7 +53,12 @@ export default function Hero() {
                 variant="outline"
                 className="border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white bg-white"
               >
-                <Link href="/contact">Entrar em Contato</Link>
+                <a 
+                  href="#contact" 
+                  onClick={(e) => handleScrollToSection(e, 'contact')}
+                >
+                  Entrar em Contato
+                </a>
               </Button>
             </div>
           </motion.div>
@@ -92,9 +111,10 @@ export default function Hero() {
               repeatType: "loop",
             }}
           >
-            <Link
-              href="/about"
+            <a
+              href="#about"
               className="flex flex-col items-center text-slate-500 hover:text-cyan-500 transition-colors"
+              onClick={(e) => handleScrollToSection(e, 'about')}
             >
               <span className="text-sm mb-2">Rolar para baixo</span>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -106,7 +126,7 @@ export default function Hero() {
                   strokeLinejoin="round"
                 />
               </svg>
-            </Link>
+            </a>
           </motion.div>
         </div>
       </div>

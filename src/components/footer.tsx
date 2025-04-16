@@ -1,8 +1,18 @@
+"use client"
+
 import Link from "next/link"
 import { profileData } from "@/lib/data"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  
+  const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   
   return (
     <footer className="bg-slate-900 text-white py-12">
@@ -57,29 +67,49 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Links Rápidos</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                <a 
+                  href="#hero"
+                  className="text-slate-400 hover:text-cyan-400 transition-colors"
+                  onClick={(e) => handleScrollToSection(e, 'hero')}
+                >
                   Home
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/about" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                <a 
+                  href="#about"
+                  className="text-slate-400 hover:text-cyan-400 transition-colors"
+                  onClick={(e) => handleScrollToSection(e, 'about')}
+                >
                   Sobre Mim
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/experience" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                <a 
+                  href="#experience"
+                  className="text-slate-400 hover:text-cyan-400 transition-colors"
+                  onClick={(e) => handleScrollToSection(e, 'experience')}
+                >
                   Experiência
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/projects" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                <a 
+                  href="#projects"
+                  className="text-slate-400 hover:text-cyan-400 transition-colors"
+                  onClick={(e) => handleScrollToSection(e, 'projects')}
+                >
                   Projetos
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/contact" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                <a 
+                  href="#contact"
+                  className="text-slate-400 hover:text-cyan-400 transition-colors"
+                  onClick={(e) => handleScrollToSection(e, 'contact')}
+                >
                   Contato
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

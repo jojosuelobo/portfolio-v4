@@ -6,6 +6,14 @@ import Link from "next/link"
 import { profileData } from "@/lib/data"
 
 export default function About() {
+  const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-20 bg-white" id="about">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -141,7 +149,12 @@ export default function About() {
 
         <div className="mt-16 text-center">
           <Button asChild size="lg" className="bg-slate-900 hover:bg-slate-800 text-white">
-            <Link href="/experience">Ver Experiência</Link>
+            <a 
+              href="#experience" 
+              onClick={(e) => handleScrollToSection(e, 'experience')}
+            >
+              Ver Experiência
+            </a>
           </Button>
         </div>
       </div>
