@@ -4,10 +4,10 @@ export const profileData = {
   bio: "QA Automation Engineer com experiência em testes funcionais e automatizados. Especializado em garantir a qualidade de software através de testes eficientes e processos ágeis.",
   yearsOfExperience: 4,
   contact: {
-    email: "josue.lobo@email.com",
-    phone: "+55 (99) 99999-9999",
-    github: "github.com/josuelobo",
-    linkedin: "linkedin.com/in/josuelobo"
+    email: "jojosuelobo@gmail.com",
+    //phone: "+55 (99) 99999-9999",
+    github: "github.com/jojosuelobo",
+    linkedin: "linkedin.com/in/jojosuelobo"
   },
   skills: [
     { name: "JavaScript", level: 90 },
@@ -25,14 +25,19 @@ export const profileData = {
   ],
   education: [
     {
+      degree: "Pós-graduação em Data Science & Machine Learning",
+      institution: "XP Educação",
+      period: "2024"
+    },
+    {
       degree: "Bacharel em Ciência da Computação",
       institution: "UVV",
-      period: "2015 - 2019"
+      period: "2019 - 2024"
     },
     {
       degree: "CTFL - Certified Tester Foundation Level",
       institution: "ISTQB",
-      period: "2020"
+      period: "2024"
     },
     {
       degree: "CCNA - Cisco Certified Network Associate",
@@ -42,12 +47,25 @@ export const profileData = {
   ],
   experience: [
     {
+      company: "Namastex",
+      position: "AI Engineer",
+      period: "Fevereiro 2025 - Atualmente",
+      location: "Remoto - Brasil",
+      description: "Relatórios focados no aprimoramento dos componentes do Langflow, incluindo análise da experiência do usuário relacionada à inteligência artificial, relatórios de controle de qualidade e fornecimento de assistência e suporte a novos usuários do Langflow.",
+      technologies: ["Python", "Langflow", "Langchain", "Agents"],
+      responsibilities: [
+        "Análise da experiência do usuário relacionada à inteligência artificial",
+        "Relatórios de controle de qualidade",
+        "Fornecimento de assistência e suporte a novos usuários do Langflow"
+      ]
+    },
+    {
       company: "Software Mind",
       position: "QA Automation Engineer",
-      period: "Junho 2024 - Atual",
-      location: "Remoto - Texas/EUA",
-      description: "Responsável por criar e automatizar casos de teste para várias implementações e rotinas de plataformas. Envolve a manutenção e desenvolvimento de testes automatizados no Cypress, bem como a criação de testes no Playwright para refatoração do pipeline existente do Cypress. A empresa segue uma metodologia ágil, utilizando o Jira, e trabalhamos em sprints para entregar soluções de alta qualidade.",
-      technologies: ["Cypress", "Playwright", "TypeScript", "Postman", "Jest"],
+      period: "Junho 2024 - Atualmente",
+      location: "Remoto - EUA",
+      description: "Responsável por criar e automatizar casos de teste para diversas implementações e rotinas da plataforma. Inclui a manutenção e desenvolvimento de testes automatizados em Cypress. Aplicando metodologia ágil, utilizando o Jira, e trabalhando em sprints para entregar soluções de alta qualidade.",
+      technologies: ["Cypress", "JavaScript", "TypeScript", "Postman", "Metodologia Ágil", "Jira"],
       responsibilities: [
         "Criação de casos de teste para novas implementações e rotinas de plataforma",
         "Automatização de rotinas de teste usando Zephyr Scale",
@@ -58,42 +76,27 @@ export const profileData = {
       ]
     },
     {
-      company: "Namastex",
-      position: "QA Engineer",
-      period: "2022 - 2024",
-      location: "Remoto - Brasil",
-      description: "Desenvolvimento de testes automatizados para aplicações web e mobile. Criação de documentação de testes e processos de QA.",
-      technologies: ["Selenium", "Java", "JavaScript", "Appium"],
-      responsibilities: [
-        "Desenvolvimento de frameworks de automação para aplicações web e mobile", 
-        "Criação e manutenção de documentação detalhada de testes", 
-        "Implementação de processos de QA eficientes",
-        "Identificação e reporte de bugs através do sistema de rastreamento",
-        "Colaboração direta com desenvolvedores para resolução de problemas"
-      ]
-    },
-    {
       company: "Octuspay",
       position: "QA Analyst",
-      period: "2020 - 2022",
-      location: "Híbrido - São Paulo",
+      period: "Outubro 2024 - Junho 2022",
+      location: "Presencial - Vitória/ES",
       description: "Testes manuais e automatizados de aplicações de pagamento. Validação de requisitos e casos de teste.",
-      technologies: ["Selenium", "Python", "TestNG"],
+      technologies: ["TypeScript", "Cypress", "JavaScript", "Postman"],
       responsibilities: [
         "Execução de testes manuais e automatizados em aplicações de pagamento",
         "Validação de requisitos e criação de casos de teste baseados em histórias de usuário",
-        "Desenvolvimento de scripts de automação usando Selenium e Python",
+        "Desenvolvimento de scripts de automação usando Cypress",
         "Análise e verificação de resultados de testes",
         "Participação em reuniões de planejamento de sprint e retrospectivas"
       ]
     },
     {
       company: "Etaure",
-      position: "QA Junior",
-      period: "2019 - 2020",
-      location: "Presencial - Rio de Janeiro",
+      position: "Estagiário de QA",
+      period: "Abril 2023 - Outubro 2024",
+      location: "Híbrido - Vitória/ES",
       description: "Testes funcionais e exploratórios. Reporte de bugs e acompanhamento de correções.",
-      technologies: ["Selenium", "JavaScript", "Trello"],
+      technologies: ["TypeScript", "Cypress", "JavaScript", "Postman"],
       responsibilities: [
         "Realização de testes funcionais e exploratórios em aplicações web",
         "Identificação, documentação e reporte de bugs através do sistema de rastreamento",
@@ -104,10 +107,10 @@ export const profileData = {
     },
     {
       company: "Conexos",
-      position: "Analista de Qualidade",
-      period: "Setembro 2022 - Fevereiro 2024",
+      position: "Analista de Qualidade Junior",
+      period: "Setembro 2022 - Fevereiro 2023",
       location: "Híbrido - Vitória/ES",
-      description: "Obtive conhecimento em teste de software e operações de negócios em uma empresa de tecnologia. Como Analista de Qualidade (QA), as responsabilidades incluíam o planejamento e desenvolvimento de casos de teste, criação de cenários de teste, documentação de testes e da plataforma, execução de testes funcionais e não funcionais, análise de requisitos, redação de relatórios de bugs e automação de casos de teste usando a ferramenta Ghost Inspector.",
+      description: "Obtive conhecimento em teste de software e operações de negócios em uma empresa de tecnologia. Como Analista de Qualidade (QA)",
       technologies: ["Ghost Inspector", "Selenium", "Testes Manuais", "Jira"],
       responsibilities: [
         "Planejamento e execução das atividades diárias de acordo com os prazos definidos pela equipe, colaborando com o bom andamento das operações e a qualidade dos resultados",
