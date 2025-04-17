@@ -77,7 +77,7 @@ export const profileData = {
     },
     {
       company: "Octuspay",
-      position: "QA Analyst",
+      position: "Analista de QA",
       period: "Outubro 2024 - Junho 2022",
       location: "Presencial - Vitória/ES",
       description: "Testes manuais e automatizados de aplicações de pagamento. Validação de requisitos e casos de teste.",
@@ -107,7 +107,7 @@ export const profileData = {
     },
     {
       company: "Conexos",
-      position: "Analista de Qualidade Junior",
+      position: "Analista de QA Junior",
       period: "Setembro 2022 - Fevereiro 2023",
       location: "Híbrido - Vitória/ES",
       description: "Obtive conhecimento em teste de software e operações de negócios em uma empresa de tecnologia. Como Analista de Qualidade (QA)",
@@ -122,7 +122,7 @@ export const profileData = {
     },
     {
       company: "Conexos",
-      position: "Estagiário de Analista de Qualidade",
+      position: "Estagiário de QA",
       period: "Julho 2021 - Setembro 2022",
       location: "Híbrido - Vitória/ES",
       description: "Suporte ao time de QA em testes manuais e documentação.",
