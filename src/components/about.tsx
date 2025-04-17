@@ -41,9 +41,9 @@ export default function About() {
             className="lg:col-span-5 flex items-center justify-center"
           >
             <div className="relative w-full max-w-md">
-              <div className="bg-slate-100 rounded-lg p-4 h-full">
+              <div>
                 <Image
-                  src="/images/profile.svg"
+                  src="/imagens/profile.svg"
                   alt={profileData.name}
                   width={500}
                   height={500}
@@ -71,15 +71,15 @@ export default function About() {
             <div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Quem sou eu</h3>
               <p className="text-slate-700 mb-4">
-                Sou um Analista de QA apaixonado por garantir a qualidade de software através de processos eficientes e automação. Com formação em Ciência da Computação e experiência em diversas empresas de tecnologia, desenvolvi habilidades sólidas em ferramentas de automação como Cypress, Selenium, Playwright e Jest.
+                Sou um profissional apaixonado por tecnologia, especializado em qualidade de software e automação de testes. Com uma formação em <strong>Ciência da Computação</strong> pela Universidade Vila Velha (UVV) e certificações como <strong>CTFL</strong> (Certified Tester Foundation Level) pela BSTQB, trago consigo uma sólida experiência em <strong>testes manuais e automatizados</strong>, bem como em desenvolvimento web.
               </p>
               <p className="text-slate-700 mb-6">
-                Minha abordagem combina testes manuais meticulosos com estratégias de automação eficientes, sempre buscando o equilíbrio perfeito entre velocidade e qualidade. Acredito na melhoria contínua e na importância de estar sempre atualizado com as últimas tendências e ferramentas do mercado.
+                Tenho bons conhecimentos nas linguagens de programação: <strong>JavaScript, TypeScript, Python e ferramentas de testes, como Jest, Cypress e Selenium.</strong> Me adapto a mudanças com facilidade, e busco soluções ágeis diante de um problema. Gosto de conhecer o novo, enfrentar desafios e superar limites. Justamente por isso escolhi essa área, já que é ampla, e me permite adquirir conhecimento ou aprimorar habilidades diariamente.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <motion.div 
+              <motion.div
                 className="bg-white shadow-sm rounded-lg p-6 border border-slate-100 text-center"
                 whileHover={{ y: -10, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
@@ -93,11 +93,11 @@ export default function About() {
                 </div>
                 <h4 className="text-lg font-semibold text-slate-900 mb-2">Formação</h4>
                 <p className="text-sm text-slate-600">
-                  Ciência da Computação - UVV
+                  <strong>Ciência da Computação - UVV</strong>
                 </p>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className="bg-white shadow-sm rounded-lg p-6 border border-slate-100 text-center"
                 whileHover={{ y: -10, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
@@ -109,11 +109,11 @@ export default function About() {
                 </div>
                 <h4 className="text-lg font-semibold text-slate-900 mb-2">Certificações</h4>
                 <p className="text-sm text-slate-600">
-                  CTFL, CCNA
+                  <strong>CTFL - BSTQB</strong>
                 </p>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className="bg-white shadow-sm rounded-lg p-6 border border-slate-100 text-center"
                 whileHover={{ y: -10, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
@@ -125,7 +125,7 @@ export default function About() {
                 </div>
                 <h4 className="text-lg font-semibold text-slate-900 mb-2">Experiência</h4>
                 <p className="text-sm text-slate-600">
-                +{profileData.yearsOfExperience} anos na área de TI
+                  <strong>+{profileData.yearsOfExperience} anos na área de TI</strong>
                 </p>
               </motion.div>
             </div>
