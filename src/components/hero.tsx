@@ -72,7 +72,7 @@ export default function Hero() {
             <div className="relative w-full aspect-square rounded-full bg-gradient-to-br from-slate-900 to-slate-800 p-1">
               <div className="absolute inset-2 rounded-full bg-slate-50 flex items-center justify-center overflow-hidden">
                 <Image
-                  src="/images/profile.svg"
+                  src="/imagens/profile-draw-2.svg"
                   alt={profileData.name}
                   width={500}
                   height={500}
