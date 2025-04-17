@@ -10,18 +10,18 @@ export const profileData = {
     linkedin: "linkedin.com/in/jojosuelobo"
   },
   skills: [
-    { name: "JavaScript", level: 90 },
-    { name: "TypeScript", level: 85 },
-    { name: "Python", level: 80 },
-    { name: "Cypress", level: 95 },
-    { name: "Playwright", level: 90 },
-    { name: "Selenium", level: 85 },
-    { name: "Jest", level: 80 },
-    { name: "Postman", level: 90 },
-    { name: "Automação de Testes", level: 95 },
-    { name: "Testes de API", level: 90 },
-    { name: "Testes de UI", level: 90 },
-    { name: "Integração Contínua", level: 85 }
+    { name: "JavaScript", image: "/tech/JavaScript.svg", alt: "JavaScript" },
+    { name: "TypeScript", image: "/tech/TypeScript.svg", alt: "TypeScript" },
+    { name: "Python", image: "/tech/Python.svg", alt: "Python" },
+    { name: "Cypress", image: "/tech/Cypress.svg", alt: "Cypress" },
+    { name: "Selenium", image: "/tech/Selenium.png", alt: "Selenium" },
+    { name: "Playwright", image: "/tech/Playwright.svg", alt: "Playwright" },
+    { name: "Git", image: "/tech/Git.svg", alt: "Git" },
+    { name: "Postman", image: "/tech/Postman.svg", alt: "Postman" },
+    { name: "SQL", image: "/tech/SQL.svg", alt: "SQL" },
+    { name: "Figma", image: "/tech/Figma.svg", alt: "Figma" },
+    { name: "Next.js", image: "/tech/Next.js.svg", alt: "Next.js" },
+    { name: "Docker", image: "/tech/Docker.svg", alt: "Docker" }
   ],
   education: [
     {
