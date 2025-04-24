@@ -5,6 +5,7 @@ import { profileData } from "@/lib/data"
 import { projectsDataEN } from "@/lib/data-en"
 import Image from "next/image"
 import { useLanguage } from "@/hooks/use-language"
+import { LanguageTransition } from "./language-transition"
 
 export default function Projects() {
   const { t, language } = useLanguage();
@@ -22,10 +23,12 @@ export default function Projects() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{t("projectsTitle")}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              <LanguageTransition>{t("projectsTitle")}</LanguageTransition>
+            </h2>
             <div className="w-20 h-1.5 bg-cyan-500 mx-auto mb-6"></div>
             <p className="text-lg text-slate-700">
-              {t("projectsDescription")}
+              <LanguageTransition>{t("projectsDescription")}</LanguageTransition>
             </p>
           </motion.div>
         </div>
@@ -50,8 +53,12 @@ export default function Projects() {
                     className="object-contain h-full w-full"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">{project.title}</h3>
-                <p className="text-slate-700 mb-6 text-sm">{project.description}</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  <LanguageTransition>{project.title}</LanguageTransition>
+                </h3>
+                <p className="text-slate-700 mb-6 text-sm">
+                  <LanguageTransition>{project.description}</LanguageTransition>
+                </p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech, idx) => (
@@ -76,7 +83,7 @@ export default function Projects() {
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-code-slash" viewBox="0 0 16 16">
                       <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
                     </svg>
-                    {t("codeButton")}
+                    <LanguageTransition>{t("codeButton")}</LanguageTransition>
                   </a>
                   {project.demoUrl && (
                     <a
@@ -88,7 +95,7 @@ export default function Projects() {
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-play-fill" viewBox="0 0 16 16">
                         <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
                       </svg>
-                      {t("demoButton")}
+                      <LanguageTransition>{t("demoButton")}</LanguageTransition>
                     </a>
                   )}
                 </div>
@@ -105,7 +112,7 @@ export default function Projects() {
             viewport={{ once: true }}
           >
             <p className="text-lg text-slate-700 mb-6">
-              {t("projectsFooter")}
+              <LanguageTransition>{t("projectsFooter")}</LanguageTransition>
             </p>
             <a
               href={`https://${profileData.contact.github}`}
@@ -113,7 +120,9 @@ export default function Projects() {
               rel="noopener noreferrer"
               className="inline-flex items-center text-cyan-600 hover:text-cyan-700"
             >
-              <span className="mr-2">{t("viewMoreOnGitHub")}</span>
+              <span className="mr-2">
+                <LanguageTransition>{t("viewMoreOnGitHub")}</LanguageTransition>
+              </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"

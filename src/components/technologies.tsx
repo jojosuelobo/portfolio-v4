@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { profileData } from "@/lib/data"
 import { useLanguage } from "@/hooks/use-language"
+import { LanguageTransition } from "./language-transition"
 
 export default function Technologies() {
   const { t } = useLanguage();
@@ -17,10 +18,12 @@ export default function Technologies() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{t("technologiesTitle")}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              <LanguageTransition>{t("technologiesTitle")}</LanguageTransition>
+            </h2>
             <div className="w-20 h-1.5 bg-cyan-500 mx-auto mb-6"></div>
             <p className="text-lg text-slate-700">
-              {t("technologiesDescription")}
+              <LanguageTransition>{t("technologiesDescription")}</LanguageTransition>
             </p>
           </motion.div>
         </div>

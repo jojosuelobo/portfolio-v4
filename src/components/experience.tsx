@@ -5,6 +5,7 @@ import { profileData } from "@/lib/data"
 import { experienceDataEN } from "@/lib/data-en"
 import { useState, useMemo } from "react"
 import { useLanguage } from "@/hooks/use-language"
+import { LanguageTransition } from "./language-transition"
 
 type CompanyIndices = {
   company: string;
@@ -63,7 +64,9 @@ export default function Experience() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{t("experiencesTitle")}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              <LanguageTransition>{t("experiencesTitle")}</LanguageTransition>
+            </h2>
             <div className="w-20 h-1.5 bg-cyan-500 mx-auto mb-6"></div>
           </motion.div>
         </div>
@@ -106,28 +109,32 @@ export default function Experience() {
                         className={`${expIndex !== conexosIndices[0] ? 'mt-12' : ''}`}
                       >
                         <div className="mb-4">
-                          <h3 className="text-2xl font-bold text-slate-900 mb-2">{exp.position}</h3>
+                          <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                            <LanguageTransition>{exp.position}</LanguageTransition>
+                          </h3>
                           <div className="flex items-center">
                             <span className="text-lg font-medium text-cyan-500">{exp.company}</span>
                             {exp.location && (
                               <span className="text-slate-600 text-sm ml-2">
-                                ({exp.location})
+                                (<LanguageTransition>{exp.location}</LanguageTransition>)
                               </span>
                             )}
                           </div>
                           <div className="text-right text-cyan-500 font-medium">
-                            {exp.period}
+                            <LanguageTransition>{exp.period}</LanguageTransition>
                           </div>
                         </div>
 
                         <div className="text-slate-700 mb-6 leading-relaxed">
-                          {exp.description}
+                          <LanguageTransition>{exp.description}</LanguageTransition>
                         </div>
 
                         <ul className="list-disc pl-5 space-y-2">
                           {exp.responsibilities &&
                             exp.responsibilities.map((item, idx) => (
-                              <li key={idx} className="text-slate-700">{item}</li>
+                              <li key={idx} className="text-slate-700">
+                                <LanguageTransition>{item}</LanguageTransition>
+                              </li>
                             ))}
                         </ul>
                       </motion.div>
@@ -144,28 +151,32 @@ export default function Experience() {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="mb-4">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-2">{experienceData[activeExperience].position}</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                      <LanguageTransition>{experienceData[activeExperience].position}</LanguageTransition>
+                    </h3>
                     <div className="flex items-center">
                       <span className="text-lg font-medium text-cyan-500">{experienceData[activeExperience].company}</span>
                       {experienceData[activeExperience].location && (
                         <span className="text-slate-600 text-sm ml-2">
-                          ({experienceData[activeExperience].location})
+                          (<LanguageTransition>{experienceData[activeExperience].location}</LanguageTransition>)
                         </span>
                       )}
                     </div>
                     <div className="text-right text-cyan-500 font-medium">
-                      {experienceData[activeExperience].period}
+                      <LanguageTransition>{experienceData[activeExperience].period}</LanguageTransition>
                     </div>
                   </div>
 
                   <div className="text-slate-700 mb-6 leading-relaxed">
-                    {experienceData[activeExperience].description}
+                    <LanguageTransition>{experienceData[activeExperience].description}</LanguageTransition>
                   </div>
 
                   <ul className="list-disc pl-5 space-y-2">
                     {experienceData[activeExperience].responsibilities &&
                       experienceData[activeExperience].responsibilities.map((item, idx) => (
-                        <li key={idx} className="text-slate-700">{item}</li>
+                        <li key={idx} className="text-slate-700">
+                          <LanguageTransition>{item}</LanguageTransition>
+                        </li>
                       ))}
                   </ul>
                 </motion.div>

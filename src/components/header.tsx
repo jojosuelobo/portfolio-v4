@@ -8,6 +8,8 @@ import { Menu, X } from "lucide-react"
 import { useMobile } from "@/hooks/use-mobile"
 import { useLanguage } from "@/hooks/use-language"
 import { LanguageSelector } from "./ui/language-selector"
+import { LanguageTransition } from "./language-transition"
+import { TranslationKey } from "@/lib/i18n"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -16,11 +18,11 @@ export default function Header() {
   const { t } = useLanguage()
 
   // Define os itens de navegação com as traduções
-  const navItems = [
-    { name: t("home"), href: "#hero" },
-    { name: t("about"), href: "#about" },
-    { name: t("experience"), href: "#experience" },
-    { name: t("projects"), href: "#projects" },
+  const navItems: { name: TranslationKey; href: string }[] = [
+    { name: "home", href: "#hero" },
+    { name: "about", href: "#about" },
+    { name: "experience", href: "#experience" },
+    { name: "projects", href: "#projects" },
   ]
 
   useEffect(() => {
@@ -91,7 +93,7 @@ export default function Header() {
                         className="py-3 px-4 text-lg font-medium text-slate-800 hover:text-cyan-500 transition-colors"
                         onClick={(e) => handleNavClick(e, item.href)}
                       >
-                        {item.name}
+                        <LanguageTransition>{t(item.name)}</LanguageTransition>
                       </a>
                     ))}
                   </nav>
@@ -108,7 +110,7 @@ export default function Header() {
                     className="py-2 px-3 text-sm font-medium text-slate-700 hover:text-cyan-500 transition-colors"
                     onClick={(e) => handleNavClick(e, item.href)}
                   >
-                    {item.name}
+                    <LanguageTransition>{t(item.name)}</LanguageTransition>
                   </a>
                 ))}
               </nav>
