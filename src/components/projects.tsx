@@ -126,7 +126,7 @@ export default function Projects() {
               e soluções personalizadas para garantir a qualidade do software.
             </p>
             <a
-              href="https://github.com/josuelobo"
+              href={`https://${profileData.contact.github}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-cyan-600 hover:text-cyan-700"
