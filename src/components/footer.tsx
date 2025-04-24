@@ -1,6 +1,7 @@
 "use client"
 
 import { profileData } from "@/lib/data"
+import Image from "next/image"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -11,8 +12,13 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center mb-4 md:mb-0">
             <div className="text-xl font-bold flex items-center">
-              <span className="text-cyan-500 mr-1">JL</span>
-              <span>Lobo</span>
+              <Image
+                src="/imagens/logo-2.svg"
+                alt="Josué Lobo"
+                width={30}
+                height={30}
+                className="h-7 w-auto"
+              />
             </div>
             <p className="text-slate-400 ml-4 text-sm">
               QA Automation Engineer
