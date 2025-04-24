@@ -138,28 +138,28 @@ export const profileData = {
   ],
   projects: [
     {
-      title: "Framework de Automação de Testes",
-      description: "Desenvolvimento de um framework completo para automação de testes web utilizando Cypress, com geração de relatórios e integração com CI/CD.",
-      technologies: ["Cypress", "TypeScript", "Docker", "Jenkins"],
-      image: "/images/project1.jpg"
+      title: "cypress docgen",
+      description: "Gera automaticamente documentação a partir dos seus testes Cypress. Mantém a documentação atualizada e sincronizada com o seu código, com suporte para formatos personalizados e saída em Markdown.",
+      image: "/projects/cypress-docgen.png",
+      technologies: ["Cypress", "JavaScript", "TypeScript", "npm", "markdown"],
+      codeUrl: "https://github.com/paulomarian0/cypress-docgen",
+      //demoUrl: "https://github.com/paulomarian0/cypress-docgen"
     },
     {
-      title: "Automação de API com Postman",
-      description: "Criação de coleções de testes para APIs RESTful, com validação de schemas e performance.",
-      technologies: ["Postman", "Newman", "JavaScript", "JSON Schema"],
-      image: "/images/project2.jpg"
+      title: "Guess The Flag",
+      description: "Jogo educacional desafiador que testa seus conhecimentos sobre bandeiras do mundo. Ganhe pontos e mostre que você é o mestre das bandeiras.",
+      image: "/projects/guess-the-flag.png",
+      technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vercel"],
+      codeUrl: "https://github.com/jojosuelobo/guessTheFlag",
+      demoUrl: "https://guess-the-flag-snowy.vercel.app/"
     },
     {
-      title: "Testes E2E com Playwright",
-      description: "Implementação de testes end-to-end utilizando Playwright em aplicação React, com execução paralela e em diferentes navegadores.",
-      technologies: ["Playwright", "TypeScript", "React", "GitHub Actions"],
-      image: "/images/project3.jpg"
-    },
-    {
-      title: "Automação de Testes Mobile",
-      description: "Desenvolvimento de testes automatizados para aplicações mobile utilizando Appium e Webdriverio.",
-      technologies: ["Appium", "JavaScript", "WebdriverIO", "Android", "iOS"],
-      image: "/images/project4.jpg"
+      title: "Agro View",
+      description: "Aplicação desenvolvida como parte do meu Trabalho de Conclusão de Curso (TCC). Projetado especificamente para atender às necessidades dos produtores rurais, visa simplificar e aprimorar as operações agrícolas, proporcionando uma ferramenta abrangente para monitoramento e gestão eficiente do plantio.",
+      image: "/projects/agro-view.png",
+      technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
+      codeUrl: "https://github.com/jojosuelobo/agroview-v3",
+      //demoUrl: "https://guess-the-flag-snowy.vercel.app/"
     }
   ]
 } 
