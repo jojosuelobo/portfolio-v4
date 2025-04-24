@@ -131,7 +131,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden md:block">
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{
