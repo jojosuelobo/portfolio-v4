@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
+import { LanguageProvider } from "@/hooks/use-language";
 import Header from "@/components/header";
 
 const geistSans = Geist({
@@ -31,8 +32,10 @@ export default function RootLayout({
         className={cn("min-h-screen bg-background font-sans antialiased", geistSans.variable, geistMono.variable)}
       >
         <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange>
-          <Header />
-          {children}
+          <LanguageProvider>
+            <Header />
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

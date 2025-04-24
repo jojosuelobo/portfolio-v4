@@ -6,19 +6,22 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useMobile } from "@/hooks/use-mobile"
-
-const navItems = [
-  { name: "Home", href: "#hero" },
-  { name: "Sobre", href: "#about" },
-  { name: "Experiência", href: "#experience" },
-  { name: "Projetos", href: "#projects" },
-  { name: "Contato", href: "#contact" },
-]
+import { useLanguage } from "@/hooks/use-language"
+import { LanguageSelector } from "./ui/language-selector"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const isMobile = useMobile()
+  const { t } = useLanguage()
+
+  // Define os itens de navegação com as traduções
+  const navItems = [
+    { name: t("home"), href: "#hero" },
+    { name: t("about"), href: "#about" },
+    { name: t("experience"), href: "#experience" },
+    { name: t("projects"), href: "#projects" },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,9 +74,12 @@ export default function Header() {
 
           {isMobile ? (
             <>
-              <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </Button>
+              <div className="flex items-center gap-2">
+                <LanguageSelector />
+                <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+                  {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                </Button>
+              </div>
 
               {isMenuOpen && (
                 <div className="fixed inset-0 top-16 bg-white z-40 animate-fade-in">
@@ -88,41 +94,26 @@ export default function Header() {
                         {item.name}
                       </a>
                     ))}
-                    <div className="mt-4 px-4">
-                      <Button asChild className="w-full bg-cyan-500 hover:bg-cyan-600">
-                        <a
-                          href="#contact"
-                          onClick={(e) => handleNavClick(e, "#contact")}
-                        >
-                          Entrar em Contato
-                        </a>
-                      </Button>
-                    </div>
                   </nav>
                 </div>
               )}
             </>
           ) : (
-            <nav className="flex items-center space-x-1">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="py-2 px-3 text-sm font-medium text-slate-700 hover:text-cyan-500 transition-colors"
-                  onClick={(e) => handleNavClick(e, item.href)}
-                >
-                  {item.name}
-                </a>
-              ))}
-              {/* <Button asChild className="ml-4 bg-cyan-500 hover:bg-cyan-600 text-white">
-                <a 
-                  href="#contact" 
-                  onClick={(e) => handleNavClick(e, "#contact")}
-                >
-                  Entrar em Contato
-                </a>
-              </Button> */}
-            </nav>
+            <div className="flex items-center">
+              <nav className="flex items-center space-x-1">
+                {navItems.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="py-2 px-3 text-sm font-medium text-slate-700 hover:text-cyan-500 transition-colors"
+                    onClick={(e) => handleNavClick(e, item.href)}
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </nav>
+              <LanguageSelector />
+            </div>
           )}
         </div>
       </div>
