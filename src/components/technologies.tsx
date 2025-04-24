@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion"
 import { profileData } from "@/lib/data"
+import { useLanguage } from "@/hooks/use-language"
 
 export default function Technologies() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-16 bg-white" id="technologies">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,10 +17,10 @@ export default function Technologies() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Tecnologias</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{t("technologiesTitle")}</h2>
             <div className="w-20 h-1.5 bg-cyan-500 mx-auto mb-6"></div>
             <p className="text-lg text-slate-700">
-              Ferramentas e tecnologias que utilizo no meu dia a dia para garantir a qualidade de software.
+              {t("technologiesDescription")}
             </p>
           </motion.div>
         </div>

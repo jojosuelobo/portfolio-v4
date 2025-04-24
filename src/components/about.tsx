@@ -4,8 +4,11 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { profileData } from "@/lib/data"
+import { useLanguage } from "@/hooks/use-language"
 
 export default function About() {
+  const { t, language } = useLanguage()
+
   const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
@@ -24,7 +27,7 @@ export default function About() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Sobre Mim</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{t("aboutMe")}</h2>
             <div className="w-20 h-1.5 bg-cyan-500 mx-auto mb-6"></div>
             {/* <p className="text-lg text-slate-700 mb-4">
               Conheça um pouco mais sobre minha trajetória, formação e o que me motiva como profissional de QA.
@@ -69,12 +72,12 @@ export default function About() {
             className="lg:col-span-7 space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Quem sou eu</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">{t("whoAmI")}</h3>
               <p className="text-slate-700 mb-4">
-                Sou um profissional apaixonado por tecnologia, especializado em qualidade de software e automação de testes. Com uma formação em <strong>Ciência da Computação</strong> pela Universidade Vila Velha (UVV) e certificações como <strong>CTFL</strong> (Certified Tester Foundation Level) pela BSTQB, trago consigo uma sólida experiência em <strong>testes manuais e automatizados</strong>, bem como em desenvolvimento web.
+                {t("aboutMeText1")}
               </p>
               <p className="text-slate-700 mb-6">
-                Tenho bons conhecimentos nas linguagens de programação: <strong>JavaScript, TypeScript, Python e ferramentas de testes, como Jest, Cypress e Selenium.</strong> Me adapto a mudanças com facilidade, e busco soluções ágeis diante de um problema. Gosto de conhecer o novo, enfrentar desafios e superar limites. Justamente por isso escolhi essa área, já que é ampla, e me permite adquirir conhecimento ou aprimorar habilidades diariamente.
+                {t("aboutMeText2")}
               </p>
             </div>
 
@@ -91,9 +94,9 @@ export default function About() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
                   </svg>
                 </div>
-                <h4 className="text-lg font-semibold text-slate-900 mb-2">Formação</h4>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">{t("education")}</h4>
                 <p className="text-sm text-slate-600">
-                  <strong>Ciência da Computação - UVV</strong>
+                  <strong>{t("computerScience")}</strong>
                 </p>
               </motion.div>
 
@@ -107,9 +110,9 @@ export default function About() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <h4 className="text-lg font-semibold text-slate-900 mb-2">Certificações</h4>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">{t("certifications")}</h4>
                 <p className="text-sm text-slate-600">
-                  <strong>CTFL - BSTQB</strong>
+                  <strong>{t("ctflCertification")}</strong>
                 </p>
               </motion.div>
 
@@ -123,9 +126,9 @@ export default function About() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h4 className="text-lg font-semibold text-slate-900 mb-2">Experiência</h4>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">{t("experienceTitle")}</h4>
                 <p className="text-sm text-slate-600">
-                  <strong>+{profileData.yearsOfExperience} anos na área de TI</strong>
+                  <strong>+{profileData.yearsOfExperience} {t("yearsInIT")}</strong>
                 </p>
               </motion.div>
             </div>
@@ -174,7 +177,7 @@ export default function About() {
                   href="#experience" 
                   onClick={(e) => handleScrollToSection(e, 'experience')}
                 >
-                  Ver Experiência
+                  {t("seeExperience")}
                 </a>
               </Button> */}
             </div>

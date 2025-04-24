@@ -8,7 +8,7 @@ import {
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   return (
-    <NextThemesProvider {...props} enableSystem={false} attribute="class">
+    <NextThemesProvider {...props} enableSystem={false} attribute="class" enableScript={false}>
       {children}
     </NextThemesProvider>
   )

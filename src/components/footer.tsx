@@ -2,8 +2,10 @@
 
 import { profileData } from "@/lib/data"
 import Image from "next/image"
+import { useLanguage } from "@/hooks/use-language"
 
 export default function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear()
 
   return (
@@ -26,9 +28,9 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col md:flex-row items-center text-slate-400 text-sm">
-            <p>© {currentYear} {profileData.name}. Todos os direitos reservados.</p>
+            <p>© {currentYear} {profileData.name}. {t("allRightsReserved")}</p>
             <span className="hidden md:inline mx-2">•</span>
-            <p className="mt-1 md:mt-0">Desenvolvido por Josué Lobo</p>
+            <p className="mt-1 md:mt-0">{t("developedBy")}</p>
           </div>
         </div>
       </div>

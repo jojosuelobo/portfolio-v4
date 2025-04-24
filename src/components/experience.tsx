@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion"
 import { profileData } from "@/lib/data"
+import { experienceDataEN } from "@/lib/data-en"
 import { useState, useMemo } from "react"
+import { useLanguage } from "@/hooks/use-language"
 
 type CompanyIndices = {
   company: string;
@@ -10,42 +12,46 @@ type CompanyIndices = {
 };
 
 export default function Experience() {
+  const { t, language } = useLanguage();
   const [activeExperience, setActiveExperience] = useState(0);
+
+  // Seleciona os dados de experiência baseado no idioma
+  const experienceData = language === "en" ? experienceDataEN : profileData.experience;
 
   // Agrupa as experiências por empresa
   const companiesWithIndices = useMemo<CompanyIndices[]>(() => {
     const companies: CompanyIndices[] = [];
     const added = new Set<string>();
-    
-    profileData.experience.forEach((exp, index) => {
+
+    experienceData.forEach((exp, index) => {
       if (!added.has(exp.company)) {
         companies.push({
           company: exp.company,
-          indices: profileData.experience
+          indices: experienceData
             .map((e, i) => e.company === exp.company ? i : -1)
             .filter(i => i !== -1)
         });
         added.add(exp.company);
       }
     });
-    
+
     return companies;
-  }, []);
+  }, [experienceData]);
 
   // Encontre a empresa atual
-  const currentCompanyData = companiesWithIndices.find(c => 
+  const currentCompanyData = companiesWithIndices.find(c =>
     c.indices.includes(activeExperience)
   );
 
   // Determine se estamos visualizando a Conexos
-  const isConexos = profileData.experience[activeExperience].company === "Conexos";
-  
+  const isConexos = experienceData[activeExperience].company === "Conexos";
+
   // Encontre os índices das experiências da Conexos
   const conexosIndices = useMemo(() => {
-    return profileData.experience
+    return experienceData
       .map((exp, index) => exp.company === "Conexos" ? index : -1)
       .filter(index => index !== -1);
-  }, []);
+  }, [experienceData]);
 
   return (
     <section className="py-20 bg-slate-50" id="experience">
@@ -57,7 +63,7 @@ export default function Experience() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Experiências</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{t("experiencesTitle")}</h2>
             <div className="w-20 h-1.5 bg-cyan-500 mx-auto mb-6"></div>
           </motion.div>
         </div>
@@ -74,7 +80,7 @@ export default function Experience() {
                     onClick={() => setActiveExperience(companyData.indices[0])}
                     className={`w-full text-left p-4 rounded transition-all flex items-center cursor-pointer
                       ${companyData.indices.includes(activeExperience)
-                        ? 'bg-blue-50 border-l-4 border-cyan-500 text-slate-600' 
+                        ? 'bg-blue-50 border-l-4 border-cyan-500 text-slate-600'
                         : 'hover:bg-gray-50 text-slate-600'
                       }`}
                   >
@@ -90,7 +96,7 @@ export default function Experience() {
                 // Layout especial para Conexos mostrando ambas as posições
                 <div>
                   {conexosIndices.map((expIndex) => {
-                    const exp = profileData.experience[expIndex];
+                    const exp = experienceData[expIndex];
                     return (
                       <motion.div
                         key={`conexos-${expIndex}`}
@@ -119,7 +125,7 @@ export default function Experience() {
                         </div>
 
                         <ul className="list-disc pl-5 space-y-2">
-                          {exp.responsibilities && 
+                          {exp.responsibilities &&
                             exp.responsibilities.map((item, idx) => (
                               <li key={idx} className="text-slate-700">{item}</li>
                             ))}
@@ -138,27 +144,27 @@ export default function Experience() {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="mb-4">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-2">{profileData.experience[activeExperience].position}</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">{experienceData[activeExperience].position}</h3>
                     <div className="flex items-center">
-                      <span className="text-lg font-medium text-cyan-500">{profileData.experience[activeExperience].company}</span>
-                      {profileData.experience[activeExperience].location && (
+                      <span className="text-lg font-medium text-cyan-500">{experienceData[activeExperience].company}</span>
+                      {experienceData[activeExperience].location && (
                         <span className="text-slate-600 text-sm ml-2">
-                          ({profileData.experience[activeExperience].location})
+                          ({experienceData[activeExperience].location})
                         </span>
                       )}
                     </div>
                     <div className="text-right text-cyan-500 font-medium">
-                      {profileData.experience[activeExperience].period}
+                      {experienceData[activeExperience].period}
                     </div>
                   </div>
 
                   <div className="text-slate-700 mb-6 leading-relaxed">
-                    {profileData.experience[activeExperience].description}
+                    {experienceData[activeExperience].description}
                   </div>
 
                   <ul className="list-disc pl-5 space-y-2">
-                    {profileData.experience[activeExperience].responsibilities && 
-                      profileData.experience[activeExperience].responsibilities.map((item, idx) => (
+                    {experienceData[activeExperience].responsibilities &&
+                      experienceData[activeExperience].responsibilities.map((item, idx) => (
                         <li key={idx} className="text-slate-700">{item}</li>
                       ))}
                   </ul>

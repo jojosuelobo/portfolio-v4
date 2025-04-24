@@ -2,9 +2,16 @@
 
 import { motion } from "framer-motion"
 import { profileData } from "@/lib/data"
+import { projectsDataEN } from "@/lib/data-en"
 import Image from "next/image"
+import { useLanguage } from "@/hooks/use-language"
 
 export default function Projects() {
+  const { t, language } = useLanguage();
+
+  // Seleciona os dados de projeto baseado no idioma
+  const projectsData = language === "en" ? projectsDataEN : profileData.projects;
+
   return (
     <section className="py-20 bg-slate-50" id="projects">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,16 +22,16 @@ export default function Projects() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Projetos</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{t("projectsTitle")}</h2>
             <div className="w-20 h-1.5 bg-cyan-500 mx-auto mb-6"></div>
             <p className="text-lg text-slate-700">
-              Conheça alguns dos meus principais projetos de automação de testes e garantia de qualidade.
+              {t("projectsDescription")}
             </p>
           </motion.div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {profileData.projects.map((project, index) => (
+          {projectsData.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -69,7 +76,7 @@ export default function Projects() {
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-code-slash" viewBox="0 0 16 16">
                       <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
                     </svg>
-                    Código
+                    {t("codeButton")}
                   </a>
                   {project.demoUrl && (
                     <a
@@ -81,7 +88,7 @@ export default function Projects() {
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-play-fill" viewBox="0 0 16 16">
                         <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
                       </svg>
-                      Demo
+                      {t("demoButton")}
                     </a>
                   )}
                 </div>
@@ -98,8 +105,7 @@ export default function Projects() {
             viewport={{ once: true }}
           >
             <p className="text-lg text-slate-700 mb-6">
-              Estes são apenas alguns dos projetos em que trabalhei. Cada projeto envolveu desafios únicos
-              e soluções personalizadas para garantir a qualidade do software.
+              {t("projectsFooter")}
             </p>
             <a
               href={`https://${profileData.contact.github}`}
@@ -107,7 +113,7 @@ export default function Projects() {
               rel="noopener noreferrer"
               className="inline-flex items-center text-cyan-600 hover:text-cyan-700"
             >
-              <span className="mr-2">Ver mais no GitHub</span>
+              <span className="mr-2">{t("viewMoreOnGitHub")}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"

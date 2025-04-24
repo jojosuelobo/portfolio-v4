@@ -5,8 +5,11 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { profileData } from "@/lib/data"
+import { useLanguage } from "@/hooks/use-language"
 
 export default function Hero() {
+  const { t, language } = useLanguage()
+
   const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
@@ -36,7 +39,7 @@ export default function Hero() {
             <h2 className="text-lg font-medium text-cyan-500 mb-3">{profileData.title}</h2>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">{profileData.name}</h1>
             <p className="text-lg md:text-xl text-slate-700 mb-8 max-w-2xl mx-auto lg:mx-0">
-              {profileData.bio}
+              {language === "pt" ? profileData.bio : t("bioText")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button asChild size="lg" className="bg-slate-900 hover:bg-slate-800 text-white">
@@ -44,7 +47,7 @@ export default function Hero() {
                   href="#projects"
                   onClick={(e) => handleScrollToSection(e, 'projects')}
                 >
-                  Ver Portfólio
+                  {t("viewPortfolio")}
                 </a>
               </Button>
               <Button
@@ -54,12 +57,12 @@ export default function Hero() {
                 className="border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white bg-white"
               >
                 <a
-                  href="resume/ResumeEN.pdf"
+                  href={language === "en" ? "resume/ResumeEN.pdf" : "resume/ResumeEN.pdf"}
                   target="_blank"
                   rel="noopener noreferrer"
                   download
                 >
-                  Baixar Currículo
+                  {t("downloadResume")}
                 </a>
               </Button>
               <Button
@@ -107,8 +110,8 @@ export default function Hero() {
                   <span className="text-xl font-bold">{profileData.yearsOfExperience}</span>
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-slate-900">Anos de</p>
-                  <p className="text-xs text-slate-600">Experiência</p>
+                  <p className="text-sm font-medium text-slate-900">{t("yearsOf")}</p>
+                  <p className="text-xs text-slate-600">{t("experienceLabel")}</p>
                 </div>
               </motion.div>
 
@@ -119,11 +122,11 @@ export default function Hero() {
               >
                 <div className="flex items-center mb-2">
                   <div className="w-3 h-3 bg-cyan-500 rounded-full mr-2"></div>
-                  <p className="text-sm font-medium text-slate-900">Automação de Testes</p>
+                  <p className="text-sm font-medium text-slate-900">{t("testAutomation")}</p>
                 </div>
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-slate-900 rounded-full mr-2"></div>
-                  <p className="text-sm font-medium text-slate-900">Garantia de Qualidade</p>
+                  <p className="text-sm font-medium text-slate-900">{t("qualityAssurance")}</p>
                 </div>
               </motion.div>
 
@@ -145,7 +148,7 @@ export default function Hero() {
               className="flex flex-col items-center text-slate-500 hover:text-cyan-500 transition-colors"
               onClick={(e) => handleScrollToSection(e, 'about')}
             >
-              <span className="text-sm mb-2">Mais Informações</span>
+              <span className="text-sm mb-2">{t("moreInfo")}</span>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M12 5V19M12 19L19 12M12 19L5 12"

@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from "@/hooks/use-language";
 import Header from "@/components/header";
+import { LanguageHtmlUpdater } from "@/components/language-html-updater";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Josué Lobo | QA Automation Engineer",
   description: "Portfólio profissional de Josué Lobo, QA Automation Engineer especializado em testes funcionais e automatizados.",
 };
@@ -33,8 +33,9 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange>
           <LanguageProvider>
+            <LanguageHtmlUpdater />
             <Header />
-            {children}
+            <main>{children}</main>
           </LanguageProvider>
         </ThemeProvider>
       </body>
