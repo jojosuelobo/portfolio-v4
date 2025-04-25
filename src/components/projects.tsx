@@ -27,9 +27,9 @@ export default function Projects() {
               <LanguageTransition>{t("projectsTitle")}</LanguageTransition>
             </h2>
             <div className="w-20 h-1.5 bg-cyan-500 mx-auto mb-6"></div>
-            <p className="text-lg text-slate-700">
+            <div className="text-lg text-slate-700">
               <LanguageTransition>{t("projectsDescription")}</LanguageTransition>
-            </p>
+            </div>
           </motion.div>
         </div>
 
@@ -56,9 +56,9 @@ export default function Projects() {
                 <h3 className="text-xl font-bold text-slate-900 mb-2">
                   <LanguageTransition>{project.title}</LanguageTransition>
                 </h3>
-                <p className="text-slate-700 mb-6 text-sm">
+                <div className="text-slate-700 mb-6 text-sm">
                   <LanguageTransition>{project.description}</LanguageTransition>
-                </p>
+                </div>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech, idx) => (
@@ -111,9 +111,9 @@ export default function Projects() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <p className="text-lg text-slate-700 mb-6">
+            <div className="text-lg text-slate-700 mb-6">
               <LanguageTransition>{t("projectsFooter")}</LanguageTransition>
-            </p>
+            </div>
             <a
               href={`https://${profileData.contact.github}`}
               target="_blank"

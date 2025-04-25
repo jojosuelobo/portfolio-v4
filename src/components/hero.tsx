@@ -110,8 +110,8 @@ export default function Hero() {
                   <span className="text-xl font-bold">{profileData.yearsOfExperience}</span>
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-slate-900">{t("yearsOf")}</p>
-                  <p className="text-xs text-slate-600">{t("experienceLabel")}</p>
+                  <span className="text-sm font-medium text-slate-900 block">{t("yearsOf")}</span>
+                  <span className="text-xs text-slate-600 block">{t("experienceLabel")}</span>
                 </div>
               </motion.div>
 
@@ -122,11 +122,11 @@ export default function Hero() {
               >
                 <div className="flex items-center mb-2">
                   <div className="w-3 h-3 bg-cyan-500 rounded-full mr-2"></div>
-                  <p className="text-sm font-medium text-slate-900">{t("testAutomation")}</p>
+                  <span className="text-sm font-medium text-slate-900">{t("testAutomation")}</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-slate-900 rounded-full mr-2"></div>
-                  <p className="text-sm font-medium text-slate-900">{t("qualityAssurance")}</p>
+                  <span className="text-sm font-medium text-slate-900">{t("qualityAssurance")}</span>
                 </div>
               </motion.div>
 

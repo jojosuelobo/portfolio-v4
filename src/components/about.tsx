@@ -95,16 +95,16 @@ export default function About() {
                 <div className="flex justify-center mb-4 text-cyan-500">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998a12.078 12.078 0 01.665-6.479L12 14z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998a12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
                   </svg>
                 </div>
                 <h4 className="text-lg font-semibold text-slate-900 mb-2">
                   <LanguageTransition>{t("education")}</LanguageTransition>
                 </h4>
-                <p className="text-sm text-slate-600">
+                <div className="text-sm text-slate-600">
                   <strong><LanguageTransition>{t("computerScience")}</LanguageTransition></strong>
-                </p>
+                </div>
               </motion.div>
 
               <motion.div
@@ -120,9 +120,9 @@ export default function About() {
                 <h4 className="text-lg font-semibold text-slate-900 mb-2">
                   <LanguageTransition>{t("certifications")}</LanguageTransition>
                 </h4>
-                <p className="text-sm text-slate-600">
+                <div className="text-sm text-slate-600">
                   <strong><LanguageTransition>{t("ctflCertification")}</LanguageTransition></strong>
-                </p>
+                </div>
               </motion.div>
 
               <motion.div
@@ -138,11 +138,11 @@ export default function About() {
                 <h4 className="text-lg font-semibold text-slate-900 mb-2">
                   <LanguageTransition>{t("experienceTitle")}</LanguageTransition>
                 </h4>
-                <p className="text-sm text-slate-600">
+                <div className="text-sm text-slate-600">
                   <strong>
                     <LanguageTransition>+{profileData.yearsOfExperience} {t("yearsInIT")}</LanguageTransition>
                   </strong>
-                </p>
+                </div>
               </motion.div>
             </div>
 

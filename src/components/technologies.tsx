@@ -22,9 +22,9 @@ export default function Technologies() {
               <LanguageTransition>{t("technologiesTitle")}</LanguageTransition>
             </h2>
             <div className="w-20 h-1.5 bg-cyan-500 mx-auto mb-6"></div>
-            <p className="text-lg text-slate-700">
+            <div className="text-lg text-slate-700">
               <LanguageTransition>{t("technologiesDescription")}</LanguageTransition>
-            </p>
+            </div>
           </motion.div>
         </div>
 
