@@ -111,9 +111,9 @@ export default function Projects() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <div className="text-lg text-slate-700 mb-6">
+            {/* <div className="text-lg text-slate-700 mb-6">
               <LanguageTransition>{t("projectsFooter")}</LanguageTransition>
-            </div>
+            </div> */}
             <a
               href={`https://${profileData.contact.github}`}
               target="_blank"

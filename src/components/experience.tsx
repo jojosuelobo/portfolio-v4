@@ -116,7 +116,7 @@ export default function Experience() {
                             <span className="text-lg font-medium text-cyan-500">{exp.company}</span>
                             {exp.location && (
                               <span className="text-slate-600 text-sm ml-2">
-                                (<LanguageTransition>{exp.location}</LanguageTransition>)
+                                <LanguageTransition>{`(${exp.location})`}</LanguageTransition>
                               </span>
                             )}
                           </div>
@@ -158,7 +158,7 @@ export default function Experience() {
                       <span className="text-lg font-medium text-cyan-500">{experienceData[activeExperience].company}</span>
                       {experienceData[activeExperience].location && (
                         <span className="text-slate-600 text-sm ml-2">
-                          (<LanguageTransition>{experienceData[activeExperience].location}</LanguageTransition>)
+                          <LanguageTransition>{`(${experienceData[activeExperience].location})`}</LanguageTransition>
                         </span>
                       )}
                     </div>
