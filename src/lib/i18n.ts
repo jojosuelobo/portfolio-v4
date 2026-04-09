@@ -25,8 +25,8 @@ export const translations = {
         // About Section
         aboutMe: "Sobre Mim",
         whoAmI: "Quem sou eu",
-        aboutMeText1: "Sou um profissional apaixonado por tecnologia, especializado em qualidade de software e automação de testes. Com uma formação em Ciência da Computação pela Universidade Vila Velha (UVV) e certificações como CTFL (Certified Tester Foundation Level) pela BSTQB, trago consigo uma sólida experiência em testes manuais e automatizados, bem como em desenvolvimento web.",
-        aboutMeText2: "Tenho bons conhecimentos nas linguagens de programação: JavaScript, TypeScript, Python e ferramentas de testes, como Jest, Cypress e Selenium. Me adapto a mudanças com facilidade, e busco soluções ágeis diante de um problema. Gosto de conhecer o novo, enfrentar desafios e superar limites. Justamente por isso escolhi essa área, já que é ampla, e me permite adquirir conhecimento ou aprimorar habilidades diariamente.",
+        aboutMeText1: "Sou um profissional apaixonado por tecnologia, especializado em qualidade de software, automação de testes e engenharia de IA. Com formação em Ciência da Computação pela Universidade Vila Velha (UVV), pós-graduação em Data Science & Machine Learning e certificação CTFL pela BSTQB, trago experiência sólida em testes manuais e automatizados, além de desenvolvimento de agentes de IA. Embaixador oficial do Cypress desde 2026.",
+        aboutMeText2: "Proficiente em JavaScript, TypeScript e Python, com expertise em Cypress, Playwright, Jest e Selenium. Atuei em projetos de IA/ML com Langflow e agentes de IA, além de pipelines de CI/CD. Fluente em inglês, me adapto com facilidade e busco constantemente aprimorar habilidades — seja em qualidade de software ou em soluções inovadoras com inteligência artificial.",
         education: "Formação",
         certifications: "Certificações",
         experienceTitle: "Experiência",
@@ -55,7 +55,7 @@ export const translations = {
         developedBy: "Desenvolvido por Josué Lobo",
 
         // Data (profileData)
-        bioText: "QA Automation Engineer com experiência em testes funcionais e automatizados. Especializado em garantir a qualidade de software através de testes eficientes e processos ágeis.",
+        bioText: "QA Automation Engineer e AI Engineer com experiência sólida em testes automatizados, qualidade de software e desenvolvimento de agentes de IA. Proficiente em Cypress, Playwright, Jest e Selenium, com atuação em projetos de IA/ML.",
     },
     en: {
         // Navegação
@@ -82,8 +82,8 @@ export const translations = {
         // About Section
         aboutMe: "About Me",
         whoAmI: "Who I am",
-        aboutMeText1: "I am a technology enthusiast specializing in software quality and test automation. With a degree in Computer Science from Vila Velha University (UVV) and certifications such as CTFL (Certified Tester Foundation Level) from BSTQB, I bring solid experience in manual and automated testing, as well as web development.",
-        aboutMeText2: "I have good knowledge in programming languages: JavaScript, TypeScript, Python, and testing tools such as Jest, Cypress, and Selenium. I adapt easily to changes and seek agile solutions when facing problems. I enjoy learning new things, facing challenges, and pushing boundaries. That's precisely why I chose this field, as it's broad and allows me to acquire knowledge or enhance skills daily.",
+        aboutMeText1: "I am a technology professional specializing in software quality, test automation, and AI engineering. With a degree in Computer Science from Vila Velha University (UVV), a postgraduate degree in Data Science & Machine Learning, and CTFL certification from BSTQB, I bring solid experience in manual and automated testing as well as AI agent development. Official Cypress Ambassador since 2026.",
+        aboutMeText2: "Proficient in JavaScript, TypeScript, and Python, with expertise in Cypress, Playwright, Jest, and Selenium. I have worked on AI/ML projects with Langflow and AI agents, as well as CI/CD pipelines. Fluent in English, I adapt easily and continuously seek to improve — whether in software quality or innovative AI-driven solutions.",
         education: "Education",
         certifications: "Certifications",
         experienceTitle: "Experience",
@@ -112,7 +112,7 @@ export const translations = {
         developedBy: "Developed by Josué Lobo",
 
         // Data (profileData)
-        bioText: "QA Automation Engineer with experience in functional and automated testing. Specialized in ensuring software quality through efficient testing and agile processes.",
+        bioText: "QA Automation Engineer & AI Engineer with solid experience in automated testing, software quality, and AI agent development. Proficient in Cypress, Playwright, Jest, and Selenium, with hands-on AI/ML project experience.",
     }
 };
 

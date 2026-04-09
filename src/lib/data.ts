@@ -1,11 +1,11 @@
 export const profileData = {
   name: "Josué Lobo",
-  title: "QA Automation Engineer",
-  bio: "QA Automation Engineer com experiência em testes funcionais e automatizados. Especializado em garantir a qualidade de software através de testes eficientes e processos ágeis.",
-  yearsOfExperience: 4,
+  title: "QA Automation Engineer & AI Engineer",
+  bio: "QA Automation Engineer e AI Engineer com experiência sólida em testes automatizados, qualidade de software e desenvolvimento de agentes de IA. Proficiente em Cypress, Playwright, Jest e Selenium, com atuação em projetos de IA/ML.",
+  yearsOfExperience: 5,
   contact: {
-    email: "jojosuelobo@gmail.com",
-    //phone: "+55 (99) 99999-9999",
+    email: "josuelobo2000@gmail.com",
+    //phone: "+55 27 988486353",
     github: "github.com/jojosuelobo",
     linkedin: "linkedin.com/in/jojosuelobo"
   },
@@ -27,12 +27,12 @@ export const profileData = {
     {
       degree: "Pós-graduação em Data Science & Machine Learning",
       institution: "XP Educação",
-      period: "2024"
+      period: "2024 - 2025"
     },
     {
       degree: "Bacharel em Ciência da Computação",
       institution: "UVV",
-      period: "2019 - 2024"
+      period: "2019 - 2023"
     },
     {
       degree: "CTFL - Certified Tester Foundation Level",
@@ -47,16 +47,32 @@ export const profileData = {
   ],
   experience: [
     {
-      company: "Namastex",
-      position: "AI Engineer",
-      period: "Fevereiro 2025 - Atualmente",
-      location: "Remoto - Brasil",
-      description: "Relatórios focados no aprimoramento dos componentes do Langflow, incluindo análise da experiência do usuário relacionada à inteligência artificial, relatórios de controle de qualidade e fornecimento de assistência e suporte a novos usuários do Langflow.",
-      technologies: ["Python", "Langflow", "Langchain", "Agents"],
+      company: "Cypress",
+      position: "Cypress Ambassador",
+      period: "Fevereiro 2026 - Atualmente",
+      location: "Remoto",
+      description: "Embaixador oficial do framework Cypress, atuando na construção de comunidade, criação de conteúdo técnico, suporte online e organização de eventos.",
+      technologies: ["Cypress", "JavaScript", "TypeScript"],
       responsibilities: [
-        "Análise da experiência do usuário relacionada à inteligência artificial",
-        "Relatórios de controle de qualidade",
-        "Fornecimento de assistência e suporte a novos usuários do Langflow"
+        "Construção de comunidade e criação de conteúdo técnico semanal (Ambassador Friday)",
+        "Plugin Select: programa para compartilhar plugins customizados — cypress-docgen",
+        "Apresentação do Studio AI para o time do Cypress",
+        "Suporte online, moderação e organização de eventos"
+      ]
+    },
+    {
+      company: "Namastex Labs",
+      position: "AI Engineer",
+      period: "Fevereiro 2025 - Outubro 2025",
+      location: "Remoto - Brasil",
+      description: "Atuação em iniciativas de garantia de qualidade para projetos de IA/ML e desenvolvimento de produtos internos. Design e desenvolvimento de agentes de IA internos, além de QA para a plataforma DataStax (Langflow).",
+      technologies: ["Python", "Langflow", "Langchain", "Agents", "LLMs"],
+      responsibilities: [
+        "Design e desenvolvimento de agentes de IA em projetos internos",
+        "Análise de QA e experiência do usuário para componentes LangFlow",
+        "Relatórios de bugs, avaliação de UX e testes de templates",
+        "Validação de funcionalidades e implementação de testes para workflows de agentes de IA",
+        "Garantia de qualidade e estabilidade da plataforma para milhares de desenvolvedores"
       ]
     },
     {
@@ -77,62 +93,47 @@ export const profileData = {
     },
     {
       company: "Octuspay",
-      position: "Analista de QA",
-      period: "Outubro 2024 - Junho 2022",
+      position: "Analista de QA Jr",
+      period: "Outubro 2023 - Junho 2024",
       location: "Presencial - Vitória/ES",
-      description: "Testes manuais e automatizados de aplicações de pagamento. Validação de requisitos e casos de teste.",
-      technologies: ["TypeScript", "Cypress", "JavaScript", "Postman"],
+      description: "Documentação das principais rotas do sistema e garantia da entrega de uma plataforma de alta qualidade através de testes funcionais e não funcionais. Criação de testes automatizados e unitários.",
+      technologies: ["TypeScript", "Cypress", "JavaScript", "Jest", "Postman", "GitHub Actions"],
       responsibilities: [
-        "Execução de testes manuais e automatizados em aplicações de pagamento",
-        "Validação de requisitos e criação de casos de teste baseados em histórias de usuário",
-        "Desenvolvimento de scripts de automação usando Cypress",
-        "Análise e verificação de resultados de testes",
-        "Participação em reuniões de planejamento de sprint e retrospectivas"
+        "Criação de testes automatizados em Cypress",
+        "Criação de testes unitários em Jest",
+        "Manutenção de pipeline de integração contínua com GitHub Actions",
+        "Criação de casos de teste e cenários de teste",
+        "Documentação de bugs e testes funcionais e não funcionais"
       ]
     },
     {
-      company: "Etaure",
-      position: "Estagiário de QA",
-      period: "Abril 2023 - Outubro 2024",
+      company: "ETAURE",
+      position: "Analista de QA Jr",
+      period: "Abril 2023 - Outubro 2023",
       location: "Híbrido - Vitória/ES",
-      description: "Testes funcionais e exploratórios. Reporte de bugs e acompanhamento de correções.",
-      technologies: ["TypeScript", "Cypress", "JavaScript", "Postman"],
+      description: "Aprimoramento de expertise em testes automatizados sob mentoria de QA sênior. Desenvolvimento de habilidades em Cypress e Selenium com implementação de estratégias de melhoria contínua.",
+      technologies: ["Cypress", "Selenium", "JavaScript", "Bitbucket"],
       responsibilities: [
-        "Realização de testes funcionais e exploratórios em aplicações web",
-        "Identificação, documentação e reporte de bugs através do sistema de rastreamento",
-        "Acompanhamento de correções até sua resolução",
-        "Apoio ao time de desenvolvimento no processo de QA",
-        "Aprendizado e aplicação de técnicas de teste de software"
+        "Documentação, planejamento e assistência da equipe de QA",
+        "Levantamento de fluxos de processos e requisitos",
+        "Criação de testes automatizados em Cypress e Selenium",
+        "Criação e manutenção de pipeline de integração contínua com Bitbucket",
+        "Documentação de bugs e criação de casos de teste e cenários de teste"
       ]
     },
     {
       company: "Conexos",
-      position: "Analista de QA Junior",
-      period: "Setembro 2022 - Fevereiro 2023",
+      position: "Analista de QA Jr",
+      period: "Junho 2021 - Fevereiro 2023",
       location: "Híbrido - Vitória/ES",
-      description: "Obtive conhecimento em teste de software e operações de negócios em uma empresa de tecnologia. Como Analista de Qualidade (QA)",
+      description: "Adquiri conhecimento em testes de software e operações de negócios em uma empresa de tecnologia. Planejamento e execução de casos de teste, documentação de bugs, testes funcionais e não funcionais e automação com Ghost Inspector.",
       technologies: ["Ghost Inspector", "Selenium", "Testes Manuais", "Jira"],
       responsibilities: [
-        "Planejamento e execução das atividades diárias de acordo com os prazos definidos pela equipe, colaborando com o bom andamento das operações e a qualidade dos resultados",
-        "Planejamento de Testes, Cenários de Testes, Casos de testes",
-        "Documentação de rotinas e bugs de sistema",
-        "Testes caixa preta",
-        "Automação de testes da Web com Ghost Inspector e Selenium"
-      ]
-    },
-    {
-      company: "Conexos",
-      position: "Estagiário de QA",
-      period: "Julho 2021 - Setembro 2022",
-      location: "Híbrido - Vitória/ES",
-      description: "Suporte ao time de QA em testes manuais e documentação.",
-      technologies: ["Testes Manuais", "Documentação", "Jira"],
-      responsibilities: [
-        "Suporte ao time de QA na execução de testes manuais",
-        "Criação e manutenção de documentação de teste",
-        "Aprendizado de processos de garantia de qualidade",
-        "Utilização de ferramentas de gerenciamento de projetos como Jira",
-        "Participação em revisões de código e sessões de teste exploratório"
+        "Criação de casos de teste e cenários de teste",
+        "Documentação de bugs e rotinas de sistema",
+        "Automação de testes Web com Ghost Inspector",
+        "Testes funcionais, não funcionais, exploratórios e de regressão",
+        "Testes de caixa preta"
       ]
     }
   ],

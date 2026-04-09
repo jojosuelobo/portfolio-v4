@@ -25,16 +25,32 @@ export const projectsDataEN = [
 
 export const experienceDataEN = [
   {
-    company: "Namastex",
-    position: "AI Engineer",
-    period: "February 2025 - Present",
-    location: "Remote - Brazil",
-    description: "Reports focused on the improvement of Langflow components, including analysis of the user experience related to artificial intelligence, quality control reports, and providing assistance and support to new Langflow users.",
-    technologies: ["Python", "Langflow", "Langchain", "Agents"],
+    company: "Cypress",
+    position: "Cypress Ambassador",
+    period: "February 2026 - Present",
+    location: "Remote",
+    description: "Official Cypress framework ambassador, focused on community building, technical content creation, online support, and event organization.",
+    technologies: ["Cypress", "JavaScript", "TypeScript"],
     responsibilities: [
-      "Analysis of user experience related to artificial intelligence",
-      "Quality control reports",
-      "Providing assistance and support to new Langflow users"
+      "Community building and weekly technical content creation (Ambassador Friday)",
+      "Plugin Select: program to share custom plugins — cypress-docgen",
+      "Presenting Studio AI to the Cypress team",
+      "Online support, moderation, and event organization"
+    ]
+  },
+  {
+    company: "Namastex Labs",
+    position: "AI Engineer",
+    period: "February 2025 - October 2025",
+    location: "Remote - Brazil",
+    description: "Quality assurance initiatives for AI/ML projects and internal product development. Design and development of internal AI agents, plus QA for the DataStax (Langflow) platform.",
+    technologies: ["Python", "Langflow", "Langchain", "Agents", "LLMs"],
+    responsibilities: [
+      "Design and development of AI agents for internal projects",
+      "QA analysis and user experience review for LangFlow components",
+      "Bug reports, UX evaluation, and template testing",
+      "Feature validation and test implementation for AI agent workflows",
+      "Ensuring quality and stability of the platform for thousands of developers"
     ]
   },
   {
@@ -55,62 +71,47 @@ export const experienceDataEN = [
   },
   {
     company: "Octuspay",
-    position: "QA Analyst",
-    period: "October 2024 - June 2022",
+    position: "Junior QA Analyst",
+    period: "October 2023 - June 2024",
     location: "On-site - Vitória/ES",
-    description: "Manual and automated testing of payment applications. Validation of requirements and test cases.",
-    technologies: ["TypeScript", "Cypress", "JavaScript", "Postman"],
+    description: "Documentation of main system routes and ensuring high-quality platform delivery through functional and non-functional testing. Creation of automated and unit tests.",
+    technologies: ["TypeScript", "Cypress", "JavaScript", "Jest", "Postman", "GitHub Actions"],
     responsibilities: [
-      "Execution of manual and automated tests on payment applications",
-      "Validation of requirements and creation of test cases based on user stories",
-      "Development of automation scripts using Cypress",
-      "Analysis and verification of test results",
-      "Participation in sprint planning meetings and retrospectives"
+      "Creation of automated tests in Cypress",
+      "Creation of unit tests in Jest",
+      "Maintenance of CI pipeline with GitHub Actions",
+      "Creation of test cases and test scenarios",
+      "Bug documentation and functional/non-functional testing"
     ]
   },
   {
-    company: "Etaure",
-    position: "QA Intern",
-    period: "April 2023 - October 2024",
+    company: "ETAURE",
+    position: "Junior QA Analyst",
+    period: "April 2023 - October 2023",
     location: "Hybrid - Vitória/ES",
-    description: "Functional and exploratory testing. Bug reporting and tracking of fixes.",
-    technologies: ["TypeScript", "Cypress", "JavaScript", "Postman"],
+    description: "Enhanced expertise in automated testing under senior QA mentorship. Developed skills in Cypress and Selenium while implementing continuous improvement strategies.",
+    technologies: ["Cypress", "Selenium", "JavaScript", "Bitbucket"],
     responsibilities: [
-      "Performing functional and exploratory tests on web applications",
-      "Identification, documentation, and reporting of bugs through the tracking system",
-      "Monitoring fixes until resolution",
-      "Support to the development team in the QA process",
-      "Learning and application of software testing techniques"
+      "QA team documentation, planning, and assistance",
+      "Process flow and requirements gathering",
+      "Creation of automated tests in Cypress and Selenium",
+      "Creation and maintenance of CI pipeline with Bitbucket",
+      "Bug documentation and creation of test cases and scenarios"
     ]
   },
   {
     company: "Conexos",
     position: "Junior QA Analyst",
-    period: "September 2022 - February 2023",
+    period: "June 2021 - February 2023",
     location: "Hybrid - Vitória/ES",
-    description: "Gained knowledge in software testing and business operations in a technology company. As a Quality Analyst (QA)",
+    description: "Gained knowledge in software testing and business operations in a technology company. Planned and developed test cases, created test scenarios, executed functional and non-functional tests, and automated test cases using Ghost Inspector.",
     technologies: ["Ghost Inspector", "Selenium", "Manual Testing", "Jira"],
     responsibilities: [
-      "Planning and execution of daily activities according to deadlines defined by the team, collaborating with the smooth running of operations and quality results",
-      "Test Planning, Test Scenarios, Test Cases",
-      "Documentation of system routines and bugs",
-      "Black box testing",
-      "Web testing automation with Ghost Inspector and Selenium"
-    ]
-  },
-  {
-    company: "Conexos",
-    position: "QA Intern",
-    period: "July 2021 - September 2022",
-    location: "Hybrid - Vitória/ES",
-    description: "Support to the QA team in manual testing and documentation.",
-    technologies: ["Manual Testing", "Documentation", "Jira"],
-    responsibilities: [
-      "Support to the QA team in executing manual tests",
-      "Creation and maintenance of test documentation",
-      "Learning quality assurance processes",
-      "Use of project management tools like Jira",
-      "Participation in code reviews and exploratory testing sessions"
+      "Creation of test cases and test scenarios",
+      "Bug and system routine documentation",
+      "Web test automation with Ghost Inspector",
+      "Functional, non-functional, exploratory, and regression testing",
+      "Black box testing"
     ]
   }
 ]; 
